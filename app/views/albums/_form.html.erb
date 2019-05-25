@@ -1,3 +1,16 @@
+<head>
+  <script>
+    $(document).ready(function() { 
+        $("#e1").select2({
+            placeholder: 'Select the albums on which tag will attached',
+            allowClear: true,
+            width: 335,
+            tags: true,
+        }); 
+    });
+  </script>
+</head>
+
 <div class="container ">
   <div class="row mt-5">
     <div class="col-4 image3">
@@ -40,7 +53,10 @@
             </div>
             <%# <%= tag.select(:tag_ids, Tag.all.collect{|p| [ p.title, p.id ]},{}, multiple: true, id: "input-tags")%>  
             <div class="col-8">
-              <%= text_field_tag 'tags', @album.tags.pluck(:title),placeholder: "Add tags", class:"input-tags w-75 rounded p-2"%>
+              <%= form.select('tags', Tag.all.pluck(:title),{}, multiple: true, id: "e1")  %>
+              <%# <%= t.select(:album_ids, current_user.albums.collect {|p| [ p.title, p.id ] }, {}, multiple: true, id:"e1")%>
+
+              <%# <%= text_field_tag 'tags', Tag.all.pluck(:title),placeholder: "Add tags", class:"input-tags w-75 rounded p-2"%> 
             </div>
           </div>
         </div>
@@ -54,6 +70,7 @@
 </div>
 <script>
   $('.input-tags').selectize({
+    tag: true,
     delimiter: ',',
     persist: false,
     create: function(input) {
