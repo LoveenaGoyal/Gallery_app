@@ -12,7 +12,7 @@ class AlbumsController < ApplicationController
   def create
     debugger
     @album = Album.new(album_params)
-    @album.tag_ids = get_tag_ids(params[:tags].split(','))
+    @album.tag_ids = get_tag_ids(params[:tag_ids].split(','))
     @album.user=current_user
     if @album.save
       redirect_to album_path(@album)

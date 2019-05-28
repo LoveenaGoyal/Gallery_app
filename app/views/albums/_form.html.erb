@@ -53,7 +53,7 @@
             </div>
             <%# <%= tag.select(:tag_ids, Tag.all.collect{|p| [ p.title, p.id ]},{}, multiple: true, id: "input-tags")%>  
             <div class="col-8">
-              <%= form.select('tags', Tag.all.pluck(:title),{}, multiple: true, id: "e1")  %>
+              <%= form.select(tag_ids, Tag.all.pluck(:title),{}, multiple: true, id: "e1")  %>
               <%# <%= t.select(:album_ids, current_user.albums.collect {|p| [ p.title, p.id ] }, {}, multiple: true, id:"e1")%>
 
               <%# <%= text_field_tag 'tags', Tag.all.pluck(:title),placeholder: "Add tags", class:"input-tags w-75 rounded p-2"%> 
