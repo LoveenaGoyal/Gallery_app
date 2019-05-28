@@ -9,6 +9,7 @@ gem 'rails', '~> 5.2.3'
 gem 'devise'
 #selectize gem
 gem "selectize-rails"
+gem 'select2-rails'
 #bootstrap gem
 gem 'bootstrap', '~> 4.3.1'
 #Bootstrap Javascript
